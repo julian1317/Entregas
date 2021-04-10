@@ -28,16 +28,14 @@ public class MaquinaDispensadora {
 
     }
     public void consultaEspecifica(String nombreProducto ){
-        System.out.println(nombreProducto);
+
         productos.forEach(productos -> {
             if(nombreProducto.equals(productos.getNombre())){
 
-
+                System.out.println(nombreProducto);
                 System.out.println(productos.getCantidad());
 
             }
-
-
 
         });
 
@@ -45,9 +43,9 @@ public class MaquinaDispensadora {
 
     public void sacar(String nombreProducto, int cantidadProducto) {
         productos.forEach(productos -> {
-            cantidad=productos.getCantidad();
-            if (nombreProducto.equals(productos.getNombre())){
 
+            if (nombreProducto.equals(productos.getNombre())){
+                cantidad=productos.getCantidad();
                 if(cantidad - cantidadProducto>=0){
                     productos.setCantidad(cantidad - cantidadProducto);
                     System.out.println("retirada con exíto"+productos.getCantidad() );
@@ -102,7 +100,8 @@ public class MaquinaDispensadora {
         productos.forEach(productos -> {
             if(productos.getCantidad()!=0){
 
-            }else {
+            }
+            else {
 
                 System.out.println(productos.getNombre());
             }
