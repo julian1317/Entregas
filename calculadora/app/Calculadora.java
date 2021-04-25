@@ -15,7 +15,42 @@ public class Calculadora {
     public static final int CERRAR=-1;
 
     public static double leerNumero(){
-        return Double.parseDouble(JOptionPane.showInputDialog(null,"digite el numero"));
+        double numero = 0; boolean seguirEjecutando;
+
+        seguirEjecutando = true;
+        do {
+            try {
+                numero = Double.parseDouble(JOptionPane.showInputDialog(null,"digite el numero"));
+                seguirEjecutando = false;
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null,"la entrada no es un numero valido","ERROR",JOptionPane.ERROR_MESSAGE);
+                seguirEjecutando = true;
+
+            }
+            
+        }while (seguirEjecutando);
+
+        return numero;
+    }
+    public static  int ciclo (){
+        int ciclo = 0; boolean seguirEjecutando;
+
+        seguirEjecutando = true;
+        do {
+            try {
+                 ciclo = Integer.parseInt(JOptionPane.showInputDialog(null,"digite la cantidad de numeros que desea "));
+
+                seguirEjecutando = false;
+            }catch (NumberFormatException e){
+                JOptionPane.showMessageDialog(null,"la entrada no es un numero valido","ERROR",JOptionPane.ERROR_MESSAGE);
+                seguirEjecutando = true;
+
+            }
+
+        }while (seguirEjecutando);
+
+        return ciclo;
+
 
     }
 
@@ -25,12 +60,14 @@ public class Calculadora {
         JOptionPane.showMessageDialog(null, mensaje+numero);
     }
 
-
+    public  static  void mensajeError(){
+        JOptionPane.showMessageDialog(null,"no se puede divir por cero","ERROR",JOptionPane.ERROR_MESSAGE);
+    }
 
 
 
     public static void main(String[] args) {
-        double numero1 = 0,  operacion;
+        double numero1 = 0; int  operacion;
         boolean seguirEjecutando= true;
         JCheckBox checkbox = new JCheckBox("Redondear");
         List <Object> operar = Arrays.asList("Suma","Resta", "Multiplicacion", "Division", checkbox );
@@ -44,11 +81,11 @@ public class Calculadora {
 
 
            if (operacion == CERRAR){ break;}
-            int ciclo = Integer.parseInt(JOptionPane.showInputDialog(null,"digite la cantidad de numeros que desea "));
+            int ciclo = ciclo();
 
 
 
-           switch ((int) operacion){
+           switch (operacion){
                case SUMA:{
                    numero1=Operador.operacion( ciclo , SUMA);
                    mostrar(numero1,"el resultado de su suma es ");
@@ -76,7 +113,6 @@ public class Calculadora {
                }
                case CERRAR:{
                    seguirEjecutando=false;
-
                    break;
 
                }
@@ -86,7 +122,6 @@ public class Calculadora {
 
 
            }
-
 
 
 

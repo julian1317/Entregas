@@ -9,6 +9,10 @@ public class Operador {
 
        for ( int i = 1; i < ciclo; i ++){
            double numero = Calculadora.leerNumero();
+           if (numero == 0 && operador == Calculadora.DIVISION){
+               Calculadora.mensajeError();
+                break;
+           }
            switch (operador){
                case Calculadora.SUMA:{
                    resultado =  resultado + numero;
