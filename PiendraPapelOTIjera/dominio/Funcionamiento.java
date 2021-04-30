@@ -43,11 +43,11 @@ public class Funcionamiento {
 
     public static int ganador(int jugadaUsuario, int jugadaComputador){
 
-        if ((jugadaUsuario == 1 && jugadaComputador == 3) || (jugadaUsuario == 2 && jugadaComputador == 1) || (jugadaUsuario == 3 && jugadaComputador == 2)) {
+        if ((jugadaUsuario == PIEDRA && jugadaComputador == TIJERA) || (jugadaUsuario == PAPEL && jugadaComputador == PIEDRA) || (jugadaUsuario == TIJERA && jugadaComputador == PAPEL)) {
             return GANAELUSUARIO;
         }
 
-        if ((jugadaUsuario == 3 && jugadaComputador == 1) || (jugadaUsuario == 1 && jugadaComputador == 2) || (jugadaUsuario == 2 && jugadaComputador == 3)){
+        if ((jugadaUsuario == TIJERA && jugadaComputador == PIEDRA) || (jugadaUsuario == PIEDRA && jugadaComputador == PAPEL) || (jugadaUsuario == PAPEL && jugadaComputador ==TIJERA)){
             return GANAELCOMPUTADOR;
         }
         else {
