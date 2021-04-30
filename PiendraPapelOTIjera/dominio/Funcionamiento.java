@@ -58,6 +58,11 @@ public class Funcionamiento {
 
     }
 
+    public static int total(int total){
+
+        return total = total +1;
+    }
+
     public  static String instrucciones(){
         String instrucciones;
          return  instrucciones=

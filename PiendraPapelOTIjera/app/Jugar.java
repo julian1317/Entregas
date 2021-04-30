@@ -23,9 +23,9 @@ public  class Jugar {
         int ganadasTotalesUsuario=0, ganadasTotalesComputador=0, empatesTotales=0;
 
         while (seguirEjecutando){
-            List <String> seleccionar = Arrays.asList("instrucciones","jugar", "registro");
+            List <String> seleccionar = Arrays.asList("   Instrucciones   ","   Jugar   ", "   Registro   ");
 
-            seleccion= JOptionPane.showOptionDialog(null,"Bienvenido al Piedra Papel o Tijera","POO - Piedra, Papel o Tijera",0,JOptionPane.QUESTION_MESSAGE,null,seleccionar.toArray(),null);
+            seleccion= JOptionPane.showOptionDialog(null,"Bienvenid@ al Piedra Papel o Tijera! \nQue quieres hacer!","POO - Piedra, Papel o Tijera",0,JOptionPane.QUESTION_MESSAGE,null,seleccionar.toArray(),null);
 
             switch (seleccion){
                 case INSTRUCCIONES:{
@@ -41,23 +41,23 @@ public  class Jugar {
 
                     List<Object> jugadas = Arrays.asList("Piedra", "Papel", "Tijera");
 
-                    jugada = (String) JOptionPane.showInputDialog(null,"selecciona tu jugada","jugada",JOptionPane.QUESTION_MESSAGE,null, new Object[]{"piedra","papel", "tijera"},null);
+                    jugada = (String) JOptionPane.showInputDialog(null,"selecciona tu jugada","Jugada!",JOptionPane.QUESTION_MESSAGE,null, new Object[]{"piedra","papel", "tijera"},null);
                     int jugadaUsuario = Funcionamiento.jugada(jugada);
                     jugada2 = Funcionamiento.jugadaComputador();
                     int jugadaComputador = Funcionamiento.jugada(jugada2);
                     int resultado = Funcionamiento.ganador(jugadaUsuario, jugadaComputador);
 
                     if (resultado==Funcionamiento.GANAELUSUARIO){
-                        ganadasTotalesUsuario= ganadasTotalesUsuario +1;
+                        ganadasTotalesUsuario= Funcionamiento.total(ganadasTotalesUsuario);
                         JOptionPane.showMessageDialog(null,"Tu seleccionaste: "+jugada+"\n La maquina selecciono: "+ jugada2+"\n \n GANASTE!");
 
                     }
                     if (resultado==Funcionamiento.GANAELCOMPUTADOR){
-                        ganadasTotalesComputador=ganadasTotalesComputador +1;
+                        ganadasTotalesComputador=Funcionamiento.total(ganadasTotalesComputador);
                         JOptionPane.showMessageDialog(null,"Tu seleccionaste: "+jugada+"\n La maquina selecciono: "+ jugada2+"\n \n PERDISTE!");
                     }
                     if(resultado==Funcionamiento.EMPATE){
-                        empatesTotales=empatesTotales +1;
+                        empatesTotales=Funcionamiento.total(empatesTotales);
                         JOptionPane.showMessageDialog(null,"Tu seleccionaste: "+jugada+"\n La maquina selecciono: "+ jugada2+"\n \n EMPATE!");
                     }
                     break;
@@ -80,7 +80,7 @@ public  class Jugar {
 
 
 
-            }
+        }
 
 
 
