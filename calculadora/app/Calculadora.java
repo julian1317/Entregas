@@ -14,6 +14,9 @@ public class Calculadora {
     public static final int DIVISION=3;
     public static final int CERRAR=-1;
 
+
+
+
     public static double leerNumero(){
         double numero = 0; boolean seguirEjecutando;
 
@@ -32,6 +35,7 @@ public class Calculadora {
 
         return numero;
     }
+
     public static  int ciclo (){
         int ciclo = 0; boolean seguirEjecutando;
 
@@ -44,17 +48,13 @@ public class Calculadora {
             }catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(null,"la entrada no es un numero valido","ERROR",JOptionPane.ERROR_MESSAGE);
                 seguirEjecutando = true;
-
             }
 
         }while (seguirEjecutando);
 
         return ciclo;
 
-
     }
-
-
 
     public static void mostrar(double numero, String mensaje){
         JOptionPane.showMessageDialog(null, mensaje+numero);
@@ -63,8 +63,6 @@ public class Calculadora {
     public  static  void mensajeError(){
         JOptionPane.showMessageDialog(null,"no se puede divir por cero","ERROR",JOptionPane.ERROR_MESSAGE);
     }
-
-
 
     public static void main(String[] args) {
         double numero1 = 0; int  operacion;
@@ -117,13 +115,7 @@ public class Calculadora {
 
                }
 
-
-
-
-
            }
-
-
 
             if(checkbox.isSelected()) {
                 int redondeado = (int) Math.round(numero1);
