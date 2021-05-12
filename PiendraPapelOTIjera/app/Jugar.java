@@ -12,20 +12,20 @@ public  class Jugar {
 
     public static final int INSTRUCCIONES = 0;
     public static final int JUGAR = 1;
-    public static final int RESULTADOS = 2;
+    public static final int REGISTRO = 2;
     public static final int CERRAR = -1;
 
 
 
     public static void main(String[] args) {
-        int seleccion;
+
         boolean seguirEjecutando= true;
         int ganadasTotalesUsuario=0, ganadasTotalesComputador=0, empatesTotales=0;
 
         while (seguirEjecutando){
             List <String> seleccionar = Arrays.asList("   Instrucciones   ","   Jugar   ", "   Registro   ");
 
-            seleccion= JOptionPane.showOptionDialog(null,"Bienvenid@ al Piedra Papel o Tijera! \nQue quieres hacer!","POO - Piedra, Papel o Tijera",0,JOptionPane.QUESTION_MESSAGE,null,seleccionar.toArray(),null);
+            int seleccion= JOptionPane.showOptionDialog(null,"Bienvenid@ al Piedra Papel o Tijera! \nQue quieres hacer!","POO - Piedra, Papel o Tijera",0,JOptionPane.QUESTION_MESSAGE,null,seleccionar.toArray(),null);
 
             switch (seleccion){
                 case INSTRUCCIONES:{
@@ -38,8 +38,6 @@ public  class Jugar {
 
                 case JUGAR:{
                     String jugada,jugada2;
-
-                    List<Object> jugadas = Arrays.asList("Piedra", "Papel", "Tijera");
 
                     jugada = (String) JOptionPane.showInputDialog(null,"selecciona tu jugada","Jugada!",JOptionPane.QUESTION_MESSAGE,null, new Object[]{"piedra","papel", "tijera"},null);
                     int jugadaUsuario = Funcionamiento.jugada(jugada);
@@ -55,15 +53,19 @@ public  class Jugar {
                     if (resultado==Funcionamiento.GANAELCOMPUTADOR){
                         ganadasTotalesComputador=Funcionamiento.total(ganadasTotalesComputador);
                         JOptionPane.showMessageDialog(null,"Tu seleccionaste: "+jugada+"\n La maquina selecciono: "+ jugada2+"\n \n PERDISTE!");
+
                     }
                     if(resultado==Funcionamiento.EMPATE){
                         empatesTotales=Funcionamiento.total(empatesTotales);
                         JOptionPane.showMessageDialog(null,"Tu seleccionaste: "+jugada+"\n La maquina selecciono: "+ jugada2+"\n \n EMPATE!");
+
                     }
+
                     break;
 
+
                 }
-                case RESULTADOS:{
+                case REGISTRO:{
 
                     JOptionPane.showMessageDialog(null,"TU:  "+ganadasTotalesUsuario+" partidas ganadas"+"\n La computadora: "+ ganadasTotalesComputador+" partidas gandas"+
                             "\n Empates: "+ empatesTotales+ " partidas");
