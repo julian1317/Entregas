@@ -18,7 +18,7 @@ public class App {
         List<Empleado> empleado = new ArrayList<>(Arrays.asList(juan, julian, johanna,carolina,pedro,david,gustavo));
         Nomina nomina = new Nomina(empleado);
 
-        System.out.println("total a pagar");
+
         nomina.calcularNomina();
         System.out.println("son freelancers");
         nomina.listarFreelacers();
@@ -27,10 +27,7 @@ public class App {
         System.out.println("son directos");
         nomina.listarDirectos();
 
-        empleado.forEach(empleado1 -> {
-            System.out.println(empleado1.getNombre() + " pago  "+ empleado1.calcularSalario());
 
-        });
 
 
 

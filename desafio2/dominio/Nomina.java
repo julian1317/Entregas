@@ -12,14 +12,19 @@ public class Nomina {
     }
 
     public  void calcularNomina(){
+        this.empleados.forEach(empleado1 -> {
+            System.out.println(empleado1.getNombre() + " salario:  "+ empleado1.calcularSalario());
+
+        });
         long total =this.empleados.stream().mapToLong(Empleado::calcularSalario).sum();
-        System.out.println(total);
+        System.out.println("total a pagar: "+total);
+
 
     }
     public  void listarDirectos(){
         this.empleados.forEach(directos->{
             if(directos instanceof Directo){
-                System.out.println(directos.getNombre());
+                System.out.println(directos.getNombre()+" Directo");
             }
         });
 
@@ -28,7 +33,7 @@ public class Nomina {
     public  void listarFreelacers(){
         this.empleados.forEach(Freelace->{
             if(Freelace instanceof Freelance){
-                System.out.println(Freelace.getNombre());
+                System.out.println(Freelace.getNombre()+" Freelance ");
             }
         });
 
@@ -37,7 +42,7 @@ public class Nomina {
      public void  listarPromotores(){
         this.empleados.forEach(promotores->{
             if(promotores instanceof Promotor){
-                System.out.println(promotores.getNombre());
+                System.out.println(promotores.getNombre()+" Promotor ");
             }
         });
 
