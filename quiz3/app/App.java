@@ -24,8 +24,10 @@ public class App {
         System.out.println("disponibles ");
         System.out.println(inmueblesDelOriente.getArrendablesDisponibles());
         inmueblesDelOriente.vender(apartamentox3);
+
         System.out.println("disponibles ");
         System.out.println(inmueblesDelOriente.getArrendablesDisponibles());
+        inmueblesDelOriente.arrendar((Arrendable) apartamentox2);
         System.out.println("arrendados ");
         System.out.println(inmueblesDelOriente.getArrendados());
 

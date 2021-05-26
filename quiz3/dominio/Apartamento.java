@@ -7,24 +7,25 @@ public class Apartamento extends Inmueble implements Arrendable {
     }
 
     @Override
-    public void arrendar() {
+    public boolean arrendar() {
         if(!super.isArrendado()){
             super.setArrendado(true);
+            return true;
         }
-
+        return false;
     }
 
     @Override
-    public void devolver() {
+    public boolean devolver() {
         if(super.isArrendado()){
             super.setArrendado(false);
-
+            return true;
         }
-
+        return false;
     }
 
     @Override
     public String toString() {
-        return "apartamento "+ getDireccion() + "valor venta "+ getValorVenta() + " valor arriendo " + getValorArriendo();
+        return "apartamento en "+ getDireccion() + " valor venta "+ getValorVenta() + " valor arriendo " + getValorArriendo();
     }
 }

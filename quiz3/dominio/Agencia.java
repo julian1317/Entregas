@@ -17,13 +17,13 @@ public class Agencia {
 
     }
     public boolean arrendar(Arrendable inmueble){
-        inmueble.arrendar();
-        return true;
+        return inmueble.arrendar();
+
 
     }
     public boolean devolver(Arrendable inmueble){
-          inmueble.devolver();
-          return true;
+        return inmueble.devolver();
+
     }
     public boolean vender(Inmueble inmueble){
        if( inmueble instanceof  Arrendable && !inmueble.isArrendado() || inmueble instanceof Lote){

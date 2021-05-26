@@ -6,25 +6,26 @@ public class Casa extends Inmueble implements  Arrendable{
     }
 
     @Override
-    public void arrendar() {
+    public boolean arrendar() {
         if(!super.isArrendado()){
             super.setArrendado(true);
+            return true;
         }
-
+        return false;
     }
 
     @Override
-    public void devolver() {
+    public boolean devolver() {
         if(super.isArrendado()){
             super.setArrendado(false);
-            System.out.println(" se ha regresado la casa");
+            return true;
         }
-        else System.out.println(" la casa no estaba arrendada ");
+       return false;
 
     }
 
     @Override
     public String toString() {
-        return "Casa "+ getDireccion() + "valor venta "+ getValorVenta() + " valor arriendo " + getValorArriendo();
+        return "Casa en "+ getDireccion() + " valor venta "+ getValorVenta() + " valor arriendo " + getValorArriendo();
     }
 }

@@ -8,6 +8,6 @@ public class Lote extends Inmueble {
 
     @Override
     public String toString() {
-        return "lote "+ getDireccion() + "valor venta "+ getValorVenta();
+        return "lote en "+ getDireccion() + " valor venta "+ getValorVenta();
     }
 }
