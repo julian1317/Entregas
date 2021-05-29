@@ -49,7 +49,7 @@ public class Veterinaria {
     public void operar(){
         pacientes.forEach(paciente -> {
             if(paciente instanceof Operable){
-                operar();
+               ((Operable) paciente).operar();
             }
         });
     }
